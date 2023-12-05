@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "minimatch": "^9.0.3",
+    "playwright": "^1.40.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.1"
+  }
+}
