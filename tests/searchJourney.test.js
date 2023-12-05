@@ -1,6 +1,5 @@
 import { test, expect } from "@playwright/test"
 import { Dashboard } from "../page-objects/Dashboard"
-import { employeeDetails } from "../data/employeeDetails"
 const { devices } = require('playwright');
 
 test ("Search Wikipedia", async ({ page }) => {
