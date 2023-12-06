@@ -31,4 +31,4 @@ steps:
   inputs:
     pathToPublish: '$(build.artifactStagingDirectory)/test-results'
     artifactName: 'test-results'
-    publishLocation: 'Container'
+
