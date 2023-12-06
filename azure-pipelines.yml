@@ -26,9 +26,9 @@ steps:
   inputs:
     customCommand: 'npx playwright test'
 
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish test results'
+- task: PublishTestResults@2
   inputs:
-    pathToPublish: '$(build.artifactStagingDirectory)/test-results'
-    artifactName: 'test-results'
-
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/test-results.xml'
+    mergeTestResults: true
+    testRunTitle: 'Playwright Tests'
