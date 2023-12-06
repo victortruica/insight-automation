@@ -25,3 +25,10 @@ steps:
   displayName: 'Run Playwright tests'
   inputs:
     customCommand: 'npx playwright test'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish test results'
+  inputs:
+    pathToPublish: '$(build.artifactStagingDirectory)/test-results'
+    artifactName: 'test-results'
+    publishLocation: 'Container'
