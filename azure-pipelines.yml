@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'windows-latest'
 
 steps:
 - task: NodeTool@0
@@ -22,6 +22,5 @@ steps:
     customCommand: 'npm install playwright --with-deps'
 
 - script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
+    npx playwright test
+  displayName: 'run tests in playwright'
