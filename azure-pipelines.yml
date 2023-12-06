@@ -7,12 +7,12 @@ trigger:
 - main
 
 pool:
-  vmImage: 'windows-latest'
+  vmImage: 'ubuntu-latest'
 
 steps:
 - task: NodeTool@0
   inputs:
-    versionSpec: '10.x'
+    versionSpec: '20.x'
   displayName: 'Install Node.js'
 
 - task: Npm@1
@@ -21,6 +21,7 @@ steps:
     command: 'install'
     customCommand: 'npm install playwright --with-deps'
 
-- script: |
-    npx playwright test
-  displayName: 'run tests in playwright'
+- task: Npm@1
+  displayName: 'Run Playwright tests'
+  inputs:
+    customCommand: 'npx playwright test'
